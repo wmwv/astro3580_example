@@ -1,3 +1,6 @@
+from nose.tools import assert_equal, assert_sequence_equal
+from numpy.testing import assert_almost_equal, assert_array_almost_equal, assert_array_almost_equal_nulp
+
 def sin_in_degrees(x):
     """Return the sine of the argument.
 
@@ -11,24 +14,16 @@ def sin_in_degrees(x):
 def test_sin_in_degrees_0():
     """Test that our sin_in_degrees function passes obvious cases."""
     x = 0
-    expect = 0
+    expected = 0
     observed = sin_in_degrees(x)
-
-    if expect == observed:
-        print("Passed")
-    else:
-        print("Failed")
+    assert_almost_equal(observed, expected)
 
 def test_sin_in_degrees_90():
     """Test that our sin_in_degrees function passes obvious cases."""
     x = 90
-    expect = 1
+    expected = 1
     observed = sin_in_degrees(x)
-
-    if expect == observed:
-        print("Passed")
-    else:
-        print("Failed")
+    assert_almost_equal(observed, expected)
 
 if __name__ == "__main__":
     test_sin_in_degrees_0()
