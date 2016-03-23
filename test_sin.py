@@ -9,7 +9,9 @@ def sin_in_degrees(x):
     x - degrees.  scalar.
     """
     import math
-    return math.sin(x)
+    import numpy as np
+    x_in_degrees = np.deg2rad(x)
+    return math.sin(x_in_degrees)
 
 def test_sin_in_degrees_0():
     """Test that our sin_in_degrees function passes obvious cases."""
